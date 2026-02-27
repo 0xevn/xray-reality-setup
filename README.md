@@ -21,6 +21,10 @@ This configuration uses the **most advanced anti-censorship stack** available in
 
 ```bash
 # On a fresh VPS (Debian/Ubuntu or Alpine Linux):
+# Install git if not present: apt install git (Debian/Ubuntu) or apk add git (Alpine)
+git clone https://github.com/0xevn/xray-reality-setup.git
+cd xray-reality-setup
+
 # Run as root (use su/doas/sudo to get a root shell first)
 chmod +x xray-setup.sh
 sh xray-setup.sh
