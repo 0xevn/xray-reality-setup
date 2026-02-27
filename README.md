@@ -379,6 +379,9 @@ Alpine requires a few adaptations that the script handles automatically:
 - [Transport/REALITY docs](https://xtls.github.io/en/config/transport.html)
 - [DNS.SB](https://dns.sb/)
 - [Mullvad DNS](https://mullvad.net/en/help/dns-over-https-and-dns-over-tls)
+- [Quad9](https://www.quad9.net/)
+- [Cloudflare 1.1.1.1](https://developers.cloudflare.com/1.1.1.1/)
+- [AdGuard DNS](https://adguard-dns.io/)
 
 ---
 
