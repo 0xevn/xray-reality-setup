@@ -314,6 +314,37 @@ The setup summary prints commands tailored to your init system. Here's a referen
 7. **Never share your private key** — only share the public key with clients
 8. **Run the script in safe mode** if you're in a public place — credentials won't appear on screen
 9. **Keep logging disabled** (the default) for maximum privacy — no connection metadata is stored
+10. **Audit the script before running** — verify the code is safe (see below)
+
+---
+
+## Security Audit
+
+Before running any script as root on your server, you should verify it's safe. We provide a comprehensive audit guide in [`SECURITY_AUDIT.md`](SECURITY_AUDIT.md).
+
+**Quick steps:**
+1. Upload `xray-setup.sh` to an AI assistant (Claude, ChatGPT, Gemini, etc.)
+2. Use the audit prompt from `SECURITY_AUDIT.md`
+3. Review the generated security report
+
+**What the audit verifies:**
+- No credentials sent to external servers
+- Downloads only from official XTLS sources
+- No backdoors, hidden users, or unauthorized access
+- Secure credential generation (UUID, x25519 keys)
+- System modifications limited to documented paths
+
+For manual verification:
+```bash
+# Check all network requests
+grep -n "curl\|wget" xray-setup.sh
+
+# Verify download URLs are official
+grep -n "github.com/XTLS" xray-setup.sh
+
+# Check for suspicious commands
+grep -n "base64\|eval\|exec" xray-setup.sh
+```
 
 ---
 
